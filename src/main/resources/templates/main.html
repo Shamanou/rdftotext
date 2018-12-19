@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <title>RDF to human readable text</title>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+
+    <link href="webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
+</head>
+<body>
+<div class="container">
+    <form action="#" method="post" th:action="@{/}" th:object="${rdf}">
+        <div class="row form-group">
+            <div class="col">
+                <textarea class="form-control" rows="25" th:field="*{content}"></textarea>
+            </div>
+            <div class="col">
+                <textarea class="form-control" rows="25" th:inline="text">[[${text}]]</textarea>
+            </div>
+        </div>
+        <div class="row form-group">
+            <input class="btn btn-primary" type="submit" value="convert"/>
+        </div>
+    </form>
+</div>
+
+<script src="/webjars/jquery/jquery.min.js" type="text/javascript"></script>
+<script src="/webjars/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+</body>
+</html>
